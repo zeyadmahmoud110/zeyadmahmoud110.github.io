@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Portfolio of Zeyad Mahmoud, AI and LLM engineer: Moeen legal assistant, Qubeterra multi-agent simulation, Opinion Mining LLM.">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Zeyad Mahmoud Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single reading column, bilingual (EN/AR) with logical properties so RTL mirrors cleanly.
+   One bold move: the Moeen section carries a component map; everything else stays quiet. */
+:root {
+  --bg: #F2F5F7;
+  --surface: #FFFFFF;
+  --fg: #0F1B2D;
+  --muted: #526173;
+  --line: #D5DDE4;
+  --accent: #0A6B6B;
+  --accent-soft: #DCEEEE;
+  --brass: #9A6B12;
+  --font-display: "IBM Plex Sans Arabic", "Segoe UI", Tahoma, system-ui, sans-serif;
+  --font-body: "IBM Plex Sans Arabic", "Segoe UI", Tahoma, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0C141D; --surface: #131E2A; --fg: #E5ECF2; --muted: #93A3B3;
+    --line: #25344A; --accent: #4FC3B8; --accent-soft: #14312F; --brass: #D9A441;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0C141D; --surface: #131E2A; --fg: #E5ECF2; --muted: #93A3B3;
+  --line: #25344A; --accent: #4FC3B8; --accent-soft: #14312F; --brass: #D9A441;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 16px; line-height: 1.65; padding-inline: 20px; padding-block: 0 56px; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: 760px; margin-inline: auto; }
+[lang-only] { display: none; }
+body[data-lang="en"] [lang-only="ar"] { display: none; }
+body[data-lang="ar"] [lang-only="en"] { display: none; }
+body[data-lang="en"] [lang-only="en"], body[data-lang="ar"] [lang-only="ar"] { display: revert; }
+
+.top { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-block: 18px; border-bottom: 1px solid var(--line); }
+.top .mark { font-family: var(--font-mono); font-size: 13px; color: var(--muted); letter-spacing: .04em; }
+.toggle { font: inherit; font-size: 14px; background: transparent; color: var(--fg); border: 1px solid var(--line); border-radius: 999px; padding: 5px 14px; cursor: pointer; }
+.toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+.hero { padding-block: 44px 36px; }
+.hero h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(2.1rem, 7vw, 3.2rem); line-height: 1.12; margin: 0 0 8px; text-wrap: balance; letter-spacing: -.01em; }
+.hero .role { font-family: var(--font-mono); font-size: 13px; color: var(--accent); letter-spacing: .06em; text-transform: uppercase; margin: 0 0 18px; }
+body[data-lang="ar"] .hero .role { font-family: var(--font-body); letter-spacing: 0; text-transform: none; font-size: 15px; }
+.hero p.lead { font-size: 1.12rem; max-width: 62ch; margin: 0 0 22px; text-wrap: pretty; }
+.links { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn { display: inline-flex; align-items: center; gap: 6px; text-decoration: none; font-size: 14.5px; font-weight: 500; padding: 8px 16px; border-radius: 8px; border: 1px solid var(--line); color: var(--fg); background: var(--surface); }
+.btn:hover { border-color: var(--accent); color: var(--accent); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.btn.primary:hover { color: var(--bg); filter: brightness(1.08); }
+
+section { padding-block: 34px; border-top: 1px solid var(--line); }
+.label { font-family: var(--font-mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; }
+body[data-lang="ar"] .label { font-family: var(--font-body); letter-spacing: 0; text-transform: none; font-size: 13.5px; }
+h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.5rem, 4.5vw, 1.9rem); line-height: 1.2; margin: 0 0 10px; text-wrap: balance; }
+.sub { color: var(--muted); margin: 0 0 18px; max-width: 64ch; }
+p { margin: 0 0 14px; max-width: 66ch; text-wrap: pretty; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 28px; margin-block: 22px; }
+.stat { min-width: 0; }
+.stat b { display: block; font-family: var(--font-mono); font-weight: 500; font-size: 1.9rem; line-height: 1.1; color: var(--accent); font-variant-numeric: tabular-nums; }
+.stat span { font-size: 13.5px; color: var(--muted); }
+
+.map { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; margin-block: 20px; }
+.map div { background: var(--surface); padding: 14px 16px; min-width: 0; }
+.map h3 { margin: 0 0 4px; font-size: 14.5px; font-weight: 700; }
+.map p { margin: 0; font-size: 14px; color: var(--muted); }
+.map code, .tags span { font-family: var(--font-mono); }
+
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-block: 14px 18px; padding: 0; list-style: none; }
+.tags span { display: inline-block; font-size: 12.5px; padding: 3px 10px; border-radius: 6px; background: var(--accent-soft); color: var(--accent); }
+
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 22px; }
+.cols h3 { font-size: 14px; margin: 0 0 8px; color: var(--brass); font-weight: 700; }
+.cols ul { margin: 0; padding: 0; list-style: none; }
+.cols li { font-family: var(--font-mono); font-size: 13.5px; padding-block: 3px; border-bottom: 1px dashed var(--line); }
+.edu { margin: 0; }
+.xp { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 6px 24px; padding-block: 20px; border-top: 1px dashed var(--line); }
+.xp:first-of-type { border-top: 0; padding-top: 4px; }
+.when { font-family: var(--font-mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+body[data-lang="ar"] .when { font-family: var(--font-body); font-size: 14px; }
+.loc { display: block; margin-top: 2px; }
+.xp h3 { margin: 0; font-size: 1.08rem; line-height: 1.35; }
+.org { margin: 2px 0 10px; color: var(--accent); font-size: 14.5px; font-weight: 500; }
+.xp ul { margin: 0; padding-inline-start: 18px; }
+.xp li { margin-bottom: 6px; max-width: 64ch; }
+@media (max-width: 560px) { .xp { grid-template-columns: minmax(0, 1fr); } }
+footer { padding-top: 28px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+@media (prefers-reduced-motion: no-preference) { .btn, .toggle { transition: border-color .15s, color .15s, filter .15s; } }
+</style>
+
+</head>
+<body data-lang="en">
+<div class="wrap" id="root" dir="ltr">
+
+<div class="top">
+  <span class="mark">ZEYAD MAHMOUD</span>
+  <button class="toggle" id="lang" type="button" aria-label="Switch language">عربي</button>
+</div>
+
+<header class="hero">
+  <p class="role"><span lang-only="en">AI Engineer · LLM Engineer</span><span lang-only="ar">مهندس ذكاء اصطناعي · مهندس LLM</span></p>
+  <h1><span lang-only="en">I build LLM systems that answer from real sources, in Arabic and English.</span><span lang-only="ar">أبني أنظمة LLM بتجاوب من مصادر حقيقية، بالعربي والإنجليزي.</span></h1>
+  <p class="lead"><span lang-only="en">Graduate of the Faculty of Computers and Artificial Intelligence, AI specialization. My work is retrieval-augmented generation, agentic workflows and the backend services that put them in production. My flagship project is a legal assistant for Egyptian law.</span><span lang-only="ar">خريج كلية الحاسبات والذكاء الاصطناعي، تخصص ذكاء اصطناعي. شغلي في RAG وأنظمة الـ agents والـ backend اللي بيشغّلها في production. أهم مشروع عندي مساعد قانوني للقانون المصري.</span></p>
+  <div class="links">
+    <a class="btn primary" href="https://drive.google.com/file/d/1-Ne8k0mqQAnbj5GrM2XmCPBLNTmkBVA3/view?usp=drivesdk" target="_blank" rel="noopener"><span lang-only="en">Watch the demo</span><span lang-only="ar">شاهد الديمو</span></a>
+    <a class="btn" href="https://github.com/Moeen-Law/ai-service" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn" href="https://linkedin.com/in/zeyadmahmoud110" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</header>
+
+<section id="moeen">
+  <p class="label"><span lang-only="en">Flagship project · Graduation project</span><span lang-only="ar">المشروع الأساسي · مشروع التخرج</span></p>
+  <h2>Moeen</h2>
+  <p class="sub"><span lang-only="en">An AI legal assistant for Egyptian law.</span><span lang-only="ar">مساعد قانوني بالذكاء الاصطناعي للقانون المصري.</span></p>
+  <p><span lang-only="en">Moeen is a full product built by a team: a React frontend, a .NET backend and an AI service. I own the AI service. It runs seven agentic workflows under one orchestrator, and retrieves from Egyptian legal text with a hybrid search that adds the related articles a question depends on.</span><span lang-only="ar">معين منتج كامل اتبنى بشغل فريق: واجهة React وbackend بـ .NET وخدمة الذكاء الاصطناعي. أنا مسؤول عن خدمة الـ AI. فيها سبع workflows بتشتغل تحت orchestrator واحد، وبتجيب المعلومة من نصوص القانون المصري بـ hybrid search وبتضيف المواد المرتبطة اللي السؤال معتمد عليها.</span></p>
+
+  <div class="stats">
+    <div class="stat"><b>7</b><span><span lang-only="en">agentic workflows, one orchestrator</span><span lang-only="ar">workflows، تحت orchestrator واحد</span></span></div>
+    <div class="stat"><b>9</b><span><span lang-only="en">nodes in the Legal Chat workflow</span><span lang-only="ar">nodes في workflow المحادثة القانونية</span></span></div>
+    <div class="stat"><b>0.97</b><span><span lang-only="en">semantic cache similarity threshold</span><span lang-only="ar">حد التشابه في الـ semantic cache</span></span></div>
+  </div>
+
+  <div class="map" role="list">
+    <div role="listitem"><h3>FastAPI + Clean Architecture</h3><p><span lang-only="en">API, Core, Interfaces and Infrastructure layers kept separate.</span><span lang-only="ar">طبقات API وCore وInterfaces وInfrastructure منفصلة.</span></p></div>
+    <div role="listitem"><h3>LangGraph workflows</h3><p><span lang-only="en">Multi-step agent graphs, including a 9-node legal chat.</span><span lang-only="ar">graphs متعددة الخطوات، منها محادثة قانونية من 9 nodes.</span></p></div>
+    <div role="listitem"><h3>Hybrid RAG</h3><p><span lang-only="en">Qdrant vector search plus BM25, merged with Reciprocal Rank Fusion.</span><span lang-only="ar">بحث vector في Qdrant مع BM25، ويتدمجوا بـ Reciprocal Rank Fusion.</span></p></div>
+    <div role="listitem"><h3>Cross-reference injection</h3><p><span lang-only="en">Adds the Egyptian law articles that a retrieved article points to.</span><span lang-only="ar">بيضيف مواد القانون المصري اللي المادة المسترجعة بتحيل عليها.</span></p></div>
+    <div role="listitem"><h3>Dual-layer semantic cache</h3><p><span lang-only="en">Qdrant and Redis, so repeated questions skip the LLM.</span><span lang-only="ar">Qdrant وRedis، فالأسئلة المتكررة بتتجاوب من غير ما نكلم الـ LLM.</span></p></div>
+    <div role="listitem"><h3>Gemini + CI/CD</h3><p><span lang-only="en">Google Gemini as the primary model; Woodpecker pipeline with Discord alerts.</span><span lang-only="ar">Google Gemini كنموذج أساسي؛ pipeline على Woodpecker وإشعارات على Discord.</span></p></div>
+  </div>
+
+  <ul class="tags" aria-label="Stack"><span>FastAPI</span><span>LangGraph</span><span>Qdrant</span><span>BM25</span><span>Redis</span><span>Gemini</span><span>SSE</span><span>Woodpecker</span></ul>
+  <div class="links">
+    <a class="btn primary" href="https://drive.google.com/file/d/1-Ne8k0mqQAnbj5GrM2XmCPBLNTmkBVA3/view?usp=drivesdk" target="_blank" rel="noopener"><span lang-only="en">Watch the demo</span><span lang-only="ar">شاهد الديمو</span></a>
+    <a class="btn" href="https://github.com/Moeen-Law/ai-service" target="_blank" rel="noopener"><span lang-only="en">AI service repository</span><span lang-only="ar">كود خدمة الـ AI</span></a>
+  </div>
+</section>
+
+<section id="qubeterra">
+  <p class="label"><span lang-only="en">Fellowship project · Aug–Oct 2026 · Team</span><span lang-only="ar">مشروع الزمالة · أغسطس–أكتوبر 2026 · فريق</span></p>
+  <h2>Qubeterra AI NextGen</h2>
+  <p class="sub"><span lang-only="en">A multi-agent simulation of how stakeholders debate AI regulation.</span><span lang-only="ar">محاكاة متعددة الـ agents لنقاش أصحاب المصلحة حول تنظيم الذكاء الاصطناعي.</span></p>
+  <p><span lang-only="en">Agents with different personas debate an AI-regulation scenario, with the EU AI Act as the reference framework and UAE and Egypt as target regions. Opinion change is measured over debate rounds, and the results feed an analytics layer for agreement, influence score and opinion shift.</span><span lang-only="ar">agents بشخصيات مختلفة بتتناقش في سيناريو لتنظيم الذكاء الاصطناعي، بالـ EU AI Act كإطار مرجعي والإمارات ومصر كمناطق مستهدفة. بنقيس تغيّر الرأي على مدار الجولات، والنتايج بتتحول لتحليلات: اتفاق، ونقاط تأثير، وتحوّل في الرأي.</span></p>
+  <div class="stats">
+    <div class="stat"><b>75</b><span><span lang-only="en">documents indexed</span><span lang-only="ar">مستند متفهرس</span></span></div>
+    <div class="stat"><b>3,239</b><span><span lang-only="en">embedded chunks</span><span lang-only="ar">chunk متضمَّن</span></span></div>
+    <div class="stat"><b>6 × 5</b><span><span lang-only="en">agents × rounds in a sample Egypt run (50 routed interactions)</span><span lang-only="ar">agents × جولات في تشغيل تجريبي لمصر (50 تفاعل)</span></span></div>
+  </div>
+  <p><span lang-only="en">The knowledge base follows seven steps: scrape, clean, chunk, embed, store, retrieve and evaluate. Retrieval is hybrid (vector plus full-text) with a cross-encoder reranker. A routing graph passes messages between agents, a FastAPI backend serves a React and TypeScript frontend, and the system is deployed on Railway.</span><span lang-only="ar">الـ knowledge base بتمشي في سبع خطوات: scraping وcleaning وchunking وembedding وتخزين واسترجاع وتقييم. الاسترجاع hybrid (vector مع full-text) مع cross-encoder reranker. graph للتوجيه بيمرر الرسايل بين الـ agents، وbackend بـ FastAPI بيخدّم واجهة React وTypeScript، والنظام منشور على Railway.</span></p>
+  <ul class="tags" aria-label="Stack"><span>PostgreSQL 17</span><span>pgvector HNSW</span><span>bge-small-en-v1.5</span><span>cross-encoder reranker</span><span>FastAPI</span><span>React + TypeScript</span><span>Railway</span></ul>
+</section>
+
+<section id="opinion">
+  <p class="label"><span lang-only="en">Model fine-tuning</span><span lang-only="ar">تدريب نماذج</span></p>
+  <h2>Opinion Mining LLM</h2>
+  <p><span lang-only="en">LoRA fine-tuning of Qwen2.5-1.5B-Instruct on SemEval 2014 Task 4, the aspect-based sentiment analysis benchmark.</span><span lang-only="ar">LoRA fine-tuning لنموذج Qwen2.5-1.5B-Instruct على SemEval 2014 Task 4، المعيار القياسي لتحليل المشاعر على مستوى الجوانب.</span></p>
+  <ul class="tags" aria-label="Stack"><span>LoRA</span><span>Qwen2.5-1.5B-Instruct</span><span>SemEval 2014 Task 4</span></ul>
+  <div class="links"><a class="btn" href="https://github.com/zeyadmahmoud110/Opinion-Mining-LLM" target="_blank" rel="noopener"><span lang-only="en">View repository</span><span lang-only="ar">شوف الكود</span></a></div>
+</section>
+
+<section id="experience">
+  <p class="label"><span lang-only="en">Experience</span><span lang-only="ar">الخبرات</span></p>
+
+  <article class="xp">
+    <div class="when"><span lang-only="en">Aug – Oct 2026</span><span lang-only="ar">أغسطس – أكتوبر 2026</span><small class="loc"><span lang-only="en">Team project</span><span lang-only="ar">مشروع فريق</span></small></div>
+    <div>
+      <h3><span lang-only="en">AI NextGen Fellowship</span><span lang-only="ar">زمالة AI NextGen</span></h3>
+      <p class="org">Qubeterra</p>
+      <ul>
+        <li><span lang-only="en">Built a multi-agent platform where AI agents debate AI-regulation scenarios and opinion change is measured over rounds. Details in the <a href="#qubeterra">project section</a>.</span><span lang-only="ar">بنينا منصة multi-agent فيها agents بتتناقش في سيناريوهات تنظيم الذكاء الاصطناعي ويتقاس تغيّر الرأي على مدار الجولات. التفاصيل في <a href="#qubeterra">قسم المشاريع</a>.</span></li>
+        <li><span lang-only="en">Delivered a knowledge-base pipeline of 75 documents and 3,239 chunks with hybrid retrieval and reranking, then agents, a routing graph, analytics and a deployed frontend.</span><span lang-only="ar">سلّمنا pipeline لقاعدة معرفة من 75 مستند و3,239 chunk مع hybrid retrieval وreranking، وبعدها الـ agents وgraph التوجيه والتحليلات وواجهة منشورة.</span></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="xp">
+    <div class="when"><span lang-only="en">Sep 2025</span><span lang-only="ar">سبتمبر 2025</span><small class="loc"><span lang-only="en">Remote, Cairo, Egypt</span><span lang-only="ar">عن بُعد، القاهرة، مصر</span></small></div>
+    <div>
+      <h3>Machine Learning Engineer Trainee</h3>
+      <p class="org"><span lang-only="en">Elevvo Pathways · Virtual Training Program</span><span lang-only="ar">Elevvo Pathways · برنامج تدريب افتراضي</span></p>
+      <ul>
+        <li><span lang-only="en">Developed and evaluated machine learning models for real-world business problems with Python and Scikit-Learn.</span><span lang-only="ar">طورت وقيّمت نماذج machine learning لمشاكل business حقيقية باستخدام Python وScikit-Learn.</span></li>
+        <li><span lang-only="en">Improved predictive performance through data preprocessing, feature engineering and model tuning.</span><span lang-only="ar">حسّنت أداء التنبؤ من خلال data preprocessing وfeature engineering وtuning للنماذج.</span></li>
+        <li><span lang-only="en">Ran exploratory data analysis to surface trends and patterns, and validated models with appropriate evaluation metrics.</span><span lang-only="ar">عملت EDA لاستخراج الأنماط والاتجاهات، وتحققت من النماذج بمقاييس تقييم مناسبة.</span></li>
+        <li><span lang-only="en">Collaborated on end-to-end ML workflows from data preparation to training, evaluation and deployment considerations.</span><span lang-only="ar">اشتغلت مع الفريق على ML workflows كاملة من تجهيز البيانات للتدريب والتقييم واعتبارات الـ deployment.</span></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="xp">
+    <div class="when"><span lang-only="en">Jul 2025</span><span lang-only="ar">يوليو 2025</span><small class="loc"><span lang-only="en">Remote</span><span lang-only="ar">عن بُعد</span></small></div>
+    <div>
+      <h3>CIB Trainee</h3>
+      <p class="org"><span lang-only="en">CIB Egypt · Virtual Training Program</span><span lang-only="ar">CIB Egypt · برنامج تدريب افتراضي</span></p>
+      <ul>
+        <li><span lang-only="en">Completed a program on data analysis and machine learning fundamentals, using Python and SQL to analyze datasets and build predictive models.</span><span lang-only="ar">أكملت برنامج في أساسيات تحليل البيانات والـ machine learning، واستخدمت Python وSQL لتحليل البيانات وبناء نماذج تنبؤية.</span></li>
+        <li><span lang-only="en">Worked with banking data workflows and data-driven decision-making practices, and strengthened preprocessing, EDA and model evaluation skills.</span><span lang-only="ar">اتعرضت لـ workflows البيانات في البنوك وممارسات اتخاذ القرار المبني على البيانات، وقوّيت مهاراتي في preprocessing وEDA وتقييم النماذج.</span></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="xp">
+    <div class="when"><span lang-only="en">May – Jun 2025</span><span lang-only="ar">مايو – يونيو 2025</span><small class="loc"><span lang-only="en">Remote</span><span lang-only="ar">عن بُعد</span></small></div>
+    <div>
+      <h3>Machine Learning Engineer Trainee</h3>
+      <p class="org"><span lang-only="en">Sprints · Virtual Training Program</span><span lang-only="ar">Sprints · برنامج تدريب افتراضي</span></p>
+      <ul>
+        <li><span lang-only="en">Built and evaluated supervised and unsupervised learning models with Python and Scikit-Learn.</span><span lang-only="ar">بنيت وقيّمت نماذج supervised وunsupervised باستخدام Python وScikit-Learn.</span></li>
+        <li><span lang-only="en">Processed real-world datasets through cleaning, feature engineering and evaluation, and implemented end-to-end ML workflows.</span><span lang-only="ar">عالجت datasets حقيقية بالتنظيف وfeature engineering والتقييم، ونفذت ML workflows كاملة.</span></li>
+        <li><span lang-only="en">Strengthened classification, regression and model selection techniques.</span><span lang-only="ar">قوّيت مهاراتي في classification وregression واختيار النموذج.</span></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="xp">
+    <div class="when"><span lang-only="en">Aug – Dec 2024</span><span lang-only="ar">أغسطس – ديسمبر 2024</span><small class="loc"><span lang-only="en">Cairo, Egypt</span><span lang-only="ar">القاهرة، مصر</span></small></div>
+    <div>
+      <h3>Data Analyst Intern</h3>
+      <p class="org">AYB &amp; CIB</p>
+      <ul>
+        <li><span lang-only="en">Automated ETL pipelines in Python (Pandas, NumPy), cutting manual data preparation time by about 30% and improving dataset consistency.</span><span lang-only="ar">أتمتّ ETL pipelines بـ Python (Pandas وNumPy) وقلّلت وقت تجهيز البيانات اليدوي بحوالي 30% وحسّنت اتساق الـ datasets.</span></li>
+        <li><span lang-only="en">Refactored complex SQL queries for extraction and aggregation, reducing retrieval latency and speeding up report generation for BI stakeholders.</span><span lang-only="ar">أعدت كتابة استعلامات SQL معقدة للاستخراج والتجميع، فقلّت زمن الاسترجاع وسرّعت إنتاج التقارير لفريق الـ BI.</span></li>
+        <li><span lang-only="en">Built interactive Power BI and Tableau dashboards for real-time monitoring across departments, and ran EDA that supported strategic decisions.</span><span lang-only="ar">بنيت dashboards تفاعلية بـ Power BI وTableau للمتابعة اللحظية بين الأقسام، وعملت EDA دعمت القرارات الاستراتيجية.</span></li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<section id="skills">
+  <p class="label"><span lang-only="en">Toolbox</span><span lang-only="ar">الأدوات</span></p>
+  <div class="cols">
+    <div><h3><span lang-only="en">LLM and agents</span><span lang-only="ar">LLM والـ agents</span></h3><ul><li>LangGraph</li><li>Google Gemini</li><li>LoRA fine-tuning</li><li>Semantic caching</li></ul></div>
+    <div><h3><span lang-only="en">Retrieval</span><span lang-only="ar">الاسترجاع</span></h3><ul><li>Qdrant</li><li>pgvector (HNSW, GIN)</li><li>BM25 + RRF</li><li>Cross-encoder reranking</li></ul></div>
+    <div><h3><span lang-only="en">Data and ML</span><span lang-only="ar">البيانات وML</span></h3><ul><li>Python, SQL</li><li>Scikit-Learn</li><li>Pandas, NumPy</li><li>Power BI, Tableau</li></ul></div>
+    <div><h3><span lang-only="en">Backend and delivery</span><span lang-only="ar">Backend والنشر</span></h3><ul><li>FastAPI</li><li>Clean Architecture</li><li>Redis, PostgreSQL</li><li>Woodpecker CI/CD</li></ul></div>
+  </div>
+</section>
+
+<section id="edu">
+  <p class="label"><span lang-only="en">Education</span><span lang-only="ar">التعليم</span></p>
+  <p class="edu"><span lang-only="en">Faculty of Computers and Artificial Intelligence, specialization in Artificial Intelligence.</span><span lang-only="ar">كلية الحاسبات والذكاء الاصطناعي، تخصص ذكاء اصطناعي.</span></p>
+</section>
+
+<footer>
+  <div class="links">
+    <a class="btn" href="https://linkedin.com/in/zeyadmahmoud110" target="_blank" rel="noopener">linkedin.com/in/zeyadmahmoud110</a>
+    <a class="btn" href="https://github.com/Moeen-Law" target="_blank" rel="noopener">github.com/Moeen-Law</a>
+  </div>
+</footer>
+
+</div>
+<script>
+(function () {
+  var body = document.body, root = document.getElementById('root'), btn = document.getElementById('lang');
+  function set(l) {
+    body.setAttribute('data-lang', l);
+    root.setAttribute('dir', l === 'ar' ? 'rtl' : 'ltr');
+    document.documentElement.setAttribute('lang', l);
+    btn.textContent = l === 'ar' ? 'English' : 'عربي';
+  }
+  btn.addEventListener('click', function () {
+    set(body.getAttribute('data-lang') === 'en' ? 'ar' : 'en');
+  });
+  set('en');
+})();
+</script>
+</body>
+</html>
